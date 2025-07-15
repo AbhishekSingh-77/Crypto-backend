@@ -25,7 +25,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'fallback-secret-for-local')
 DEBUG = os.environ.get('DEBUG', 'False') == 'False'
 
 # Dynamic
-ALLOWED_HOSTS = ['crypto-backend-dj0q.onrender.com']
+ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1").split(",")
 
 
 # Application definition
